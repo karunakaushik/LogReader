@@ -1,70 +1,67 @@
 # Getting Started with Create React App
+Architecture Diagram / Solution write up : 
+	
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  +----------+         	+--------------+         		+---------+
+  |          |  HTTP  	|             |       WebSocket	|           |
+  |  Client  +<--------+   	Server    |  +<----------+  |  Logs     |
+  |          |          |             |			        |   File    |
+  +----------+          +--------------+           		+-----------+
+        |                                              			^
+        | HTTP GET /                                   		    |
+        |                                              			|
+        v                                              			|
+  +------------+                                		+--------------+
+  |             |                                		|              |
+  |   React     |                                    	|   Node.js    |
+  |   Client    |                               	    |   Server     |
+  |             |                                	    |              |
+  +-------------+                                	    +--------------+
 
-## Available Scripts
+<!-- Used Technology: NodeJs, ReactJS, WebSocket. -->
 
-In the project directory, you can run:
+In this diagram, the client sends an HTTP GET request to the server, which response with the logs file's initial contents. The client then connects to the server through WebSocket to get real-time updates to the logs file.
 
-### `npm start`
+The server hosts a Node.js application that handles HTTP requests for the logs file and manages WebSocket connections. The server loads the logs file into memory and uses fs. watch the file to monitor changes to the file. When the file changes, the server distributes the updated logs to all WebSocket clients who are connected.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Overall, this architecture provides a scalable and efficient method of displaying real-time logs to a large number of clients.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<!-- Setup steps/script - -->
+	# Here are the steps you can follow to set up the environment to run the OnlineLogsReader application on a Windows environment:
+                Install Node.js and NPM
+                Create a new react app for the project (npx create-react-app myapp)
+                Then create a new component (logcomponent .js) and copy the code for the logcomponent.js implementation of the OnlineLogsReader application.
+                Create a new directory for the server-side
+                <!-- npm init -y -->
+                <!-- npm install --save express ws -->
+                Create a new file called server.js and copy the code for the server-side implementation of the OnlineLogsReader application.
+                Create a new file called logs.txt in the server directory of the project and add some log data for testing purposes.
+                Open a Command Prompt window/terminal and navigate to the root directory of the project. Then, run the following command: node server.js
+                Open a new Command Prompt window and run the client: npm start
+                Open your web browser and navigate to http://localhost:3001 to view the OnlineLogsReader application
 
-### `npm run build`
+<!-- OnlineLogsReader application on a Linux/Mac environment: -->
+	
+Install Node.js and NPM
+mkdir online-logs-reader
+cd online-logs-reader
+Create a new react app for the project (npx create-react-app myapp)
+Then create a new component (logcomponent .js) and copy the code for the logcomponent.js implementation of the OnlineLogsReader application.
+Create a new directory for the server-side
+npm init -y
+npm install --save express ws
+Create a new file called server.js and copy the code for the server-side implementation of the OnlineLogsReader application.
+Create a new file called logs.txt in the server directory of the project and add some log data for testing purposes.
+Open a Command Prompt window/terminal and navigate to the root directory of the project. Then, run the following command: node server.js
+Open a new Command Prompt window and run the client: npm start
+Open your web browser and navigate to http://localhost:3001 to view the OnlineLogsReader application
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+	
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
