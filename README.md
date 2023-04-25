@@ -2,7 +2,7 @@
 Architecture Diagram / Solution write up : 
 	
 
-  +----------+         	+--------------+         		+---------+
+  <!-- +----------+         	+--------------+         		+---------+
   |          |  HTTP  	|             |       WebSocket	|           |
   |  Client  +<--------+   	Server    |  +<----------+  |  Logs     |
   |          |          |             |			        |   File    |
@@ -16,7 +16,7 @@ Architecture Diagram / Solution write up :
   |   React     |                                    	|   Node.js    |
   |   Client    |                               	    |   Server     |
   |             |                                	    |              |
-  +-------------+                                	    +--------------+
+  +-------------+                                	    +--------------+ -->
 
 <!-- Used Technology: NodeJs, ReactJS, WebSocket. -->
 
