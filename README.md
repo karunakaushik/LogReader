@@ -42,21 +42,21 @@ Overall, this architecture provides a scalable and efficient method of displayin
                 Open a new Command Prompt window and run the client: npm start
                 Open your web browser and navigate to http://localhost:3001 to view the OnlineLogsReader application
 
-<!-- OnlineLogsReader application on a Linux/Mac environment: -->
+    # OnlineLogsReader application on a Linux/Mac environment:
 	
-Install Node.js and NPM
-mkdir online-logs-reader
-cd online-logs-reader
-Create a new react app for the project (npx create-react-app myapp)
-Then create a new component (logcomponent .js) and copy the code for the logcomponent.js implementation of the OnlineLogsReader application.
-Create a new directory for the server-side
-npm init -y
-npm install --save express ws
-Create a new file called server.js and copy the code for the server-side implementation of the OnlineLogsReader application.
-Create a new file called logs.txt in the server directory of the project and add some log data for testing purposes.
-Open a Command Prompt window/terminal and navigate to the root directory of the project. Then, run the following command: node server.js
-Open a new Command Prompt window and run the client: npm start
-Open your web browser and navigate to http://localhost:3001 to view the OnlineLogsReader application
+        Install Node.js and NPM
+        mkdir online-logs-reader
+        cd online-logs-reader
+        Create a new react app for the project (npx create-react-app myapp)
+        Then create a new component (logcomponent .js) and copy the code for the logcomponent.js implementation of the OnlineLogsReader application.
+        Create a new directory for the server-side
+        npm init -y
+        npm install --save express ws
+        Create a new file called server.js and copy the code for the server-side implementation of the OnlineLogsReader application.
+        Create a new file called logs.txt in the server directory of the project and add some log data for testing purposes.
+        Open a Command Prompt window/terminal and navigate to the root directory of the project. Then, run the following command: node server.js
+        Open a new Command Prompt window and run the client: npm start
+        Open your web browser and navigate to http://localhost:3001 to view the OnlineLogsReader application
 
 
 
