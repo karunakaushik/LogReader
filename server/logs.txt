@@ -1,0 +1,7 @@
+asdf dfgh2023-04-24 08:00:00 | INFO | Application started
+2023-04-24 08:01:12 | DEBUG | Request received: GET /api/users
+2023-04-24 08:01:15 | DEBUG | Request received: POST /api/users { "username": "john_doe", "email": "john.doe@example.com" }
+2023-04-24 08:01:15 | INFO | User created: john_doe
+Karuna Kaushik | IIT Roorkee | Noida
+kgihdkfjdslk
+hgjkl;'
